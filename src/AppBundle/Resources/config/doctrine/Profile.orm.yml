@@ -1,0 +1,19 @@
+AppBundle\Entity\Profile:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ProfileRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    oneToOne:
+      user:
+        targetEntity: AppBundle\Entity\User
+      doner:
+        targetEntity: AppBundle\Entity\Doner
+    oneToMany:
+      staff:
+        targetEntity: AppBundle\Entity\Staff
+    lifecycleCallbacks: {  }

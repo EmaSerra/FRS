@@ -1,0 +1,19 @@
+AppBundle\Entity\Benefactor:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\BenefactorRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+      campaign:
+        targetEntity: AppBundle\Entity\Campaign
+    oneToOne:
+      project:
+        targetEntity: AppBundle\Entity\Project
+      organization:
+        targetEntity: AppBundle\Entity\Organization
+    lifecycleCallbacks: {  }

@@ -1,0 +1,21 @@
+AppBundle\Entity\Project:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ProjectRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+      organization:
+        targetEntity: AppBundle\Entity\Organization
+    manyToMany:
+      staff:
+        targetEntity: AppBundle\Entity\Staff
+    oneToOne:
+      benefactor:
+        targetEntity: AppBundle\Entity\Benefactor
+
+    lifecycleCallbacks: {  }

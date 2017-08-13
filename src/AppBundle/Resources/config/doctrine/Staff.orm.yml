@@ -1,0 +1,19 @@
+AppBundle\Entity\Staff:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\StaffRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToMany:
+      project:
+        targetEntity: AppBundle\Entity\Project
+      campaign:
+        targetEntity: AppBundle\Entity\Campaign
+    manyToOne:
+      profile:
+        targetEntity: AppBundle\Entity\Profile
+    lifecycleCallbacks: {  }

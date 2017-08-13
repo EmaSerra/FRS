@@ -1,0 +1,21 @@
+AppBundle\Entity\Donation:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\DonationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+   manyToOne:
+      donor:
+        targetEntity: AppBundle\Entity\Donor
+      campaign:
+        targetEntity: AppBundle\Entity\Campaign
+      organization:
+        targetEntity: AppBundle\Entity\Organization
+   oneToOne:
+      movement:
+        targetEntity: AppBundle\Entity\Movement
+    lifecycleCallbacks: {  }
