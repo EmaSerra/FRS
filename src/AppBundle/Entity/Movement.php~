@@ -1,0 +1,54 @@
+<?php
+
+namespace AppBundle\Entity;
+
+/**
+ * Movement
+ */
+class Movement
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+    /**
+     * @var \AppBundle\Entity\Donation
+     */
+    private $donation;
+
+
+    /**
+     * Set donation
+     *
+     * @param \AppBundle\Entity\Donation $donation
+     *
+     * @return Movement
+     */
+    public function setDonation(\AppBundle\Entity\Donation $donation = null)
+    {
+        $this->donation = $donation;
+
+        return $this;
+    }
+
+    /**
+     * Get donation
+     *
+     * @return \AppBundle\Entity\Donation
+     */
+    public function getDonation()
+    {
+        return $this->donation;
+    }
+}

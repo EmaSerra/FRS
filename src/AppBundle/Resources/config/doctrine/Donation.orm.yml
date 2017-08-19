@@ -8,14 +8,18 @@ AppBundle\Entity\Donation:
             id: true
             generator:
                 strategy: AUTO
-   manyToOne:
-      donor:
-        targetEntity: AppBundle\Entity\Donor
-      campaign:
-        targetEntity: AppBundle\Entity\Campaign
-      organization:
-        targetEntity: AppBundle\Entity\Organization
-   oneToOne:
-      movement:
-        targetEntity: AppBundle\Entity\Movement
+    manyToOne:
+        donor:
+            targetEntity: AppBundle\Entity\Donor
+            inversedBy: donations
+        campaign:
+            targetEntity: AppBundle\Entity\Campaign
+            inversedBy: donations
+        organization:
+            targetEntity: AppBundle\Entity\Organization
+            inversedBy: donations
+    oneToOne:
+        movement:
+            targetEntity: AppBundle\Entity\Movement
+            mappedBy: donation
     lifecycleCallbacks: {  }

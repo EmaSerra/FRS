@@ -9,10 +9,12 @@ AppBundle\Entity\Staff:
             generator:
                 strategy: AUTO
     manyToMany:
-      project:
+      projects:
         targetEntity: AppBundle\Entity\Project
-      campaign:
+        inversedBy: staff
+      campaigns:
         targetEntity: AppBundle\Entity\Campaign
+        inversedBy: staff
     manyToOne:
       profile:
         targetEntity: AppBundle\Entity\Profile

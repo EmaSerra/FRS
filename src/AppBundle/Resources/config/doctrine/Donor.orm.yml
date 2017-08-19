@@ -10,9 +10,10 @@ AppBundle\Entity\Donor:
                 strategy: AUTO
 
     oneToMany:
-      donation:
+      donations:
         targetEntity: AppBundle\Entity\Donation
-        oneToOne:
+        mappedBy: donor
+    oneToOne:
       profile:
         targetEntity: AppBundle\Entity\Profile
     lifecycleCallbacks: {  }

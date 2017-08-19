@@ -11,9 +11,12 @@ AppBundle\Entity\Organization:
     oneToMany:
       projects:
         targetEntity: AppBundle\Entity\Project
+        mappedBy: organization
       donations:
-        targetEntity: AppBundle\Entity\Donations
+        targetEntity: AppBundle\Entity\Donation
+        mappedBy: organization
     oneToOne:
       benefactor:
         targetEntity: AppBundle\Entity\Benefactor
+        mappedBy: organization
     lifecycleCallbacks: {  }

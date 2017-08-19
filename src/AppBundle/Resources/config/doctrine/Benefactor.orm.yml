@@ -11,9 +11,13 @@ AppBundle\Entity\Benefactor:
     manyToOne:
       campaign:
         targetEntity: AppBundle\Entity\Campaign
+        inversedBy: benefactors
     oneToOne:
       project:
         targetEntity: AppBundle\Entity\Project
+        inversedBy: benefactor
       organization:
         targetEntity: AppBundle\Entity\Organization
+        inversedBy: benefactor
+
     lifecycleCallbacks: {  }

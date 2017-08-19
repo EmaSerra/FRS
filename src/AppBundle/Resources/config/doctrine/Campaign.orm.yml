@@ -3,17 +3,20 @@ AppBundle\Entity\Campaign:
     table: null
     repositoryClass: AppBundle\Repository\CampaignRepository
     id:
-        id:
-            type: integer
-            id: true
-            generator:
-                strategy: AUTO
-    oneToMany:
-      campaign:
-        targetEntity: AppBundle\Entity\Campaign
-      donation:
-        targetEntity: AppBundle\Entity\Donation
+      id:
+        type: integer
+        id: true
+        generator:
+          strategy: AUTO
     manyToMany:
       staff:
         targetEntity: AppBundle\Entity\Staff
+        mappedBy: campaigns
+    oneToMany:
+      benefactors:
+        targetEntity: AppBundle\Entity\Benefactor
+        mappedBy: campaign
+      donations:
+        targetEntity: AppBundle\Entity\Donation
+        mappedBy: campaign
     lifecycleCallbacks: {  }

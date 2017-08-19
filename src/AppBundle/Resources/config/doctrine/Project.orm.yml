@@ -11,11 +11,14 @@ AppBundle\Entity\Project:
     manyToOne:
       organization:
         targetEntity: AppBundle\Entity\Organization
+        inversedBy: projects
     manyToMany:
       staff:
         targetEntity: AppBundle\Entity\Staff
+        mappedBy: projects
     oneToOne:
       benefactor:
         targetEntity: AppBundle\Entity\Benefactor
+        mappedBy: project
 
     lifecycleCallbacks: {  }
